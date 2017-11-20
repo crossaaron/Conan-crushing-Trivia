@@ -1,6 +1,8 @@
 // stopwatch js as used in class activity
 var counter = 30
-
+var questionArray = ["Where is my pen? ", "Are you alive? "]
+var answerArray = [["in my pocket", "in my hand"],["no I'm not", "Yes I am"]]
+var questionCounter = 0
 
 window.onload = function() {
   timerWrapper();
@@ -20,18 +22,22 @@ function timerWrapper() {
   }
 }
 
-var triviaQuestions = ["Where is my pen", "Are you alive",]
-var triviaAnswers = [["in my pocket", "in my hand"],["no I'm not", "Yes I am"]]
-
-function pickQuestions () {
-
-
-
-  
-  
+function generateQuestions() {
+  $("#questions").text(questionArray[questionCounter]);
+  $("#answers").text(answerArray[questionCounter][0] + " " + answerArray[questionCounter][1]);
 }
 
-pickQuestions();
+function quesAnswSelector() {
+  if (questionCounter < 7) {
+  questionCounter++;
+  generateQuestions();
+  }
+}
+
+generateQuestions();
+
+
+
 
 
 
