@@ -20,7 +20,8 @@ window.onload = function() {
   $("#start").click(function() {
     $('#startScreen').fadeOut(500,function(){
       $('#gameWrapper').fadeIn(500, getQuestion);
-      timerWrapper();
+      // timerWrapper();
+      $('#submitButton').append("<input type='submit' name='submit' />")
     });
   });
  
