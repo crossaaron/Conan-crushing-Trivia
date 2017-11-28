@@ -15,33 +15,42 @@ var questionArray = {
     }]
 };
 
-//fades out start jumbotron//
+// //fades out start jumbotron//
 window.onload = function() {
   $("#start").click(function() {
     $('#startScreen').fadeOut(500,function(){
       $('#gameWrapper').fadeIn(500, getQuestion);
-      // timerWrapper();
-      $('#submitButton').append("<input type='submit' name='submit' />")
+timerWrapper();
+getQuestion();
+      
+      
+
     });
   });
- 
+
 }
 
 
-//need a way to space out "divs" so they can be formatted
+// //need a way to space out "divs" so they can be formatted
 function getQuestion() {
   for (var i = 0; i < questionArray.questions.length; i++) {
   triviaQuestions.push(questionArray.questions[i].prompt);
   triviaAnswers.push(questionArray.questions[i].answers); 
-  };
+//   };
   $("#triviaQuestions" + count).append(triviaQuestions[count]);
-  $("#triviaAnswers" + count).append("<input type='radio' name='answers'/>" + triviaAnswers[count][0]);
-  $("#triviaAnswers" + count).append("<input type='radio' name='answers'/>" + triviaAnswers[count][1]);
+  $("#triviaAnswers" + count).append("<input type='radio' name='0' id='userInput' data-search='0'/>" + triviaAnswers[count][0]);
+  $("#triviaAnswers" + count).append("<input type='radio' name='0' id='userInput' data-search='1'/>" + triviaAnswers[count][1]);
+//tracking which radio button is clicked
+  $('#triviaAnswers'+ count).on('click', '#userInput',function() {
+    var x = $(this).data("search");
+    console.log(this);
+});
   count++;
   if (count < 2) {
     getQuestion();
   }
 }
+};
 
 //better clock setup than all of stopwatch code// 
 function timerWrapper() {
@@ -49,7 +58,6 @@ function timerWrapper() {
   function thirtySeconds() {
     if (timer === 0) {
       clearInterval(theClock);
-      $('#submitButton').append("<input type='submit' name='submit' />")
       alert ("TIME'S UP!!");
     }
     if (timer > 0) {
@@ -59,8 +67,7 @@ function timerWrapper() {
     ;
   }
 }
-
-
+//trying to collect data
 
 
 
