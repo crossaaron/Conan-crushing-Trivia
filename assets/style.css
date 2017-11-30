@@ -1,3 +1,13 @@
-#triviaAnswers {
-	
+body {
+	background-image: url("images/conan2.jpg");
+	background-size: auto;
+}
+
+.jumbotron {
+	text-align: center;
+	font-size: 30px;
+}
+
+#gameContainer {
+	background-color: #eee;
 }
