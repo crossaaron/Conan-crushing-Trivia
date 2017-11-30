@@ -9,22 +9,34 @@ var incorrectAnswers = 0;
 //basic questions //
 var questionArray = {
   questions: [{
-    prompt: "The World is Flat",
+    prompt: "That Which Does Not Kill Us, Makes Us Stronger",
     answers: ["True", "False",]
     }, {
-    prompt: "Humans are mammals",
+    prompt: "Fire and Wind come from the sky... From the Gods of the Sky",
     answers: ["True", "False"]
     }, {
-    prompt: "Moriarty Rules",
+    prompt: "Krum Who lives in the Earth is Conans God",
     answers: ["True","False"]
+    }, {
+    prompt: "The Gods Forgot the Secret of Steel and Left it on the Battlefield",
+    answers: ["True","False"]
+    }, {
+    prompt: "No one in this world can you trust... not women, not beasts,  only steel ",
+    answers: ["True", "False"]
     }]
 };
 
 // //fades out start jumbotron//
 window.onload = function gameStart() {
+  // little last minute music because its Conan
+  $(document).ready(function() {
+    $("#my_audio").get(0).play();
+  });
+
   $("#start").click(function() {
     $('#startScreen').fadeOut(500,function(){
       $('#gameWrapper').fadeIn(500, getQuestion);
+      $('#gameContainer').css('visibility', 'visible');
       timerWrapper();
     });  
       $('#submitButton').append('<button id="submitClick">Submit Answers</button>');
@@ -34,12 +46,8 @@ window.onload = function gameStart() {
         $('#gameWrapper').fadeOut(500,function(){
           $('#startScreen').fadeIn(500,);
           location.reload();
-
-
         });
-        
-
-  });   
+      });   
   });
 }
 
@@ -84,11 +92,13 @@ function timerWrapper() {
     if (timer === 0) {
       clearInterval(theClock);
       alert ("TIME'S UP!!");
+      alert ("You got " + correctAnswers + " right!");
+      location.reload();
     }
     if (timer > 0) {
       timer--;
     }
-    $("#timer").html(timer);
+    $("#timer").text(timer);
     ;
   }
 }

@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
+<audio id="my_audio" src="assets/conanTheme.m4a" loop="loop"></audio>
 
 <div id="startScreen">
 	<div class="jumbotron">
@@ -22,71 +23,91 @@
 
 
 <div id="gameWrapper">
-	<div class="container" id="timerContainer">
-		<div class="row">
-			<div id="timer"></div>
-		</div>
-	</div>
 	
 	<div class="container" id="gameContainer">
+		
+		<div class="row" id="timerRow">
+			<div class="col-md-4"></div>
+			<div class="card card-body col-md-4">
+    			<h4 class="card-title">Time Remaining</h4>
+    			<div id="timer"></div>
+    		</div>
+    		<div class="col-md-4"></div>
+		</div>
+
+		<div class="row col-md-4"></div>
 		<div class="row">
 			<div class="col-md-12">
 				<div id="triviaQuestions0"></div>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
 				<form id="triviaAnswers0"></form>
 			</div>
+			<div class="col-md-4"></div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
 				<div id="triviaQuestions1"></div>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
 				<form id="triviaAnswers1"></form>
 			</div>
+			<div class="col-md-4"></div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
 				<div id="triviaQuestions2"></div>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
 				<form id="triviaAnswers2"></form>
 			</div>
+			<div class="col-md-4"></div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
 				<div id="triviaQuestions3"></div>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
 				<form id="triviaAnswers3"></form>
 			</div>
+			<div class="col-md-4"></div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
 				<div id="triviaQuestions4"></div>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
 				<form id="triviaAnswers4"></form>
 			</div>
+			<div class="col-md-4"></div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
 				<div id="triviaQuestions5"></div>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
 				<form id="triviaAnswers5"></form>
 			</div>
-		</div>
-		
-		<div id="submitButton">
-			
+			<div class="col-md-4"></div>
 		</div>
 	</div>
+
+	<div class="container" id="submit">	
+		<div id="submitButton">
+		</div>
+	</div>
+	
 </div>
 
 
